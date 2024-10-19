@@ -1,0 +1,28 @@
+    h3 {
+    display: inline-block;   
+    }
+              
+    #c{
+        color: blueviolet;
+    }
+    #o{
+        color: blue;
+    }
+    #l1{
+        color: rgb(38, 158, 206);
+    }
+    #d{
+        color: rgb(40, 196, 40);
+    }
+    #p{
+        color: green;
+    }
+    #l2{
+        color: yellow;
+    }
+    #a{
+        color: orange;
+    }
+    #y{
+        color: red;
+    }
