@@ -1,0 +1,114 @@
+body {
+  background: radial-gradient(ellipse at bottom, #ffe600 0%, #66137a 100%);
+  margin: 0;
+  overflow: hidden;
+}
+
+#contenedor { 
+  width: 30%;          /* Puedes ajustarlo según tu diseño */
+  height: 250px;       /* Una altura fija que defina el área de movimiento */
+  position: relative;  /* Para que los botones se posicionen dentro de este contenedor */
+  overflow: hidden;    /* Oculta cualquier contenido que se mueva fuera del área */
+  background-color: #0f22da;  /* Color de fondo azul */
+  border-radius: 10%;
+  margin: auto;
+
+}
+
+/* Clase para las partículas (estrellitas) */
+.particle {
+  position: absolute;
+  width: 8px;           /* Tamaño base, ajústalo si lo deseas */
+  height: 8px;
+  background: radial-gradient(
+    circle,
+    #FF0000 0%,   /* Rojo */
+    #FF7F00 16%,  /* Naranja */
+    #FFFF00 33%,  /* Amarillo */
+    #00FF00 50%,  /* Verde */
+    #0000FF 66%,  /* Azul */
+    #4B0082 83%,  /* Índigo */
+    #8B00FF 100%  /* Violeta */
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: particleFade 1.5s ease-out forwards;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+
+/* Animación para que las partículas se expandan y desvanezcan */
+@keyframes particleFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+/* Estilos para los botones */
+#boton-movil,
+#boton-fijo {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #994aac;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  left: 50%;             /* Lo coloca en el centro horizontal */
+  top: 55%;              /* Lo baja un 70% desde la parte superior (ajusta según necesites) */
+  transform: translate(-50%, -50%); 
+  position: absolute;  /* Posicionamiento absoluto para moverse dentro de #contenedor */
+  transition: left 0.3s ease, top 0.3s ease; /* Transición suave al reposicionarse */
+}
+
+#boton-movil:hover {
+  background-color: rgb(204, 0, 0);
+}
+
+#boton-fijo:hover {
+  background-color: rgb(20, 143, 20);
+}
+
+#title {
+  color: #ffffff;
+  margin: 0px;
+  font-size: 60px;
+  font-family: lato;
+  animation: glitch 3s infinite;
+  padding-top: 20px;
+  padding-bottom: 2%;
+  margin-top: 5%;
+  background-color: rgb(80, 162, 195);
+  border-radius: 6px; /* Ajusté este valor, ya que "6cqw" no es válido */
+  width: 40%;
+  border-radius: 20px;
+}
+
+@keyframes glitch{
+  0%{
+    text-shadow: #ea1ded 0px 0px,
+                #940c8d 0px 0px;
+  }
+  50%{
+    text-shadow: #a83ce2 -8px 0px,
+                #b7c042 -8px 0px;
+  }
+  10%{
+    text-shadow: #b4cf06 0px 0px,
+                #0f22da 0px 0px;
+  }
+}
+
+#img1 {
+  display: block;
+  border-radius: 50px; 
+  width: 400px;
+  height: auto; 
+  background-color: rgb(198, 96, 23);
+  /* Es preferible usar auto para mantener la proporción */
+}
